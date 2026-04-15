@@ -1,13 +1,34 @@
 {
   "name": "symfony-x/dev-tools",
-  "type": "metapackage",
-  "description": "Symfony-X standardized development tooling for Symfony 8 (current)",
+  "description": "Shared QA, static analysis, and architecture tooling for Symfony-X",
+  "type": "library",
+  "license": "MIT",
   "require": {
-    "php": "^8.4",
-    "phpstan/phpstan": "^1.11",
-    "phpstan/phpstan-symfony": "^1.3",
-    "friendsofphp/php-cs-fixer": "^3.0",
-    "symfony/browser-kit": "^8.0",
-    "symfony/css-selector": "^8.0"
+    "php": "^8.3"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.66",
+    "phpstan/phpstan": "^1.12",
+    "phpunit/phpunit": "^11.4",
+    "symfony/filesystem": "8.0.*",
+    "symfony/finder": "8.0.*",
+    "symfony/process": "8.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SymfonyX\\DevTools\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SymfonyX\\DevTools\\Tests\\": "tests/"
+    }
+  },
+  "bin": [
+    "bin/symfony-x-arch-validate",
+    "bin/symfony-x-package-validate"
+  ],
+  "config": {
+    "sort-packages": true
   }
 }
